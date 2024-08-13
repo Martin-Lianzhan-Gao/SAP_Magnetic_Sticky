@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.calenderBody {
+    height: 80%;
+    width: 80%;
+    margin: 10%;
+    border-radius: 10px;
+    background-color: #65c5f2;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    position: relative;
+
+    z-index: 1;
+} 
+
+.calenderBody:before{
+    content: "";
+    position:absolute;
+    top: 0;
+    border-radius: 8px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #dd4b39;
+
+    transition: transform 450ms ease-in-out;
+    transform: scaleX(1);
+    transform-origin: left;
+
+    z-index: -1;
+}
+
+/* .calenderBody:hover:before{
+    transform: scaleX(1);
+}
+
+.calenderBody:before.cover{
+    transform: scaleX(1);
+} */
+
+.date {
+    width: 60%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    color: black;
+    transition: 0.5s;
+    z-index: 3;
+    
+}
+
+#month {
+    font-weight: 700;
+    height: 20%;
+    font-size: 40px;
+    margin: 10%;
+}
+
+#quarter{
+    height: 15%;
+    font-size: 40px;
+    margin: 5%;
+}
+
+#year{
+    
+    height: 15%;
+    font-size: 40px;
+}
+
+#seconds{
+    height: 10%;
+    font-size: 40px;
+    margin: 5%;
+}
+
+.calenderBody:hover .date{
+    transform: rotateY(360deg);
+}
+
+#switch{
+    z-index: 4;
+    margin-bottom: 50%;
+    margin-top: -35%;
+    opacity: 0.6;
+    vertical-align: center;
+    background-color: none;
+}
+
+img {
+    color: #eeeeee;
+}
+

@@ -1,0 +1,51 @@
+{
+    "id": "com.sap.sample.martindropdownwidget",
+    "version": "1.0.0",
+    "name": "Martin's Dropdown",
+    "description": "A dropdown wiget supports both read and add new elements",
+    "newInstancePrefix": "MartinsDropdownWidget",
+    "icon": "",
+    "vendor": "SAP",
+    "eula": "",
+    "supportsMobile":true,
+    "license": "",
+    "webcomponents":[
+        {
+            "kind": "main",
+            "tag": "com-sap-martinsdropdownwidget",
+            "url": "http://localhost:3000/AppliedCustomWidget/dropdown/dropdown.js",
+            "integrity": "",
+            "ignoreIntegrity": true
+        }
+    ],
+    "properties": {
+	},
+	"methods": {
+        "closeSupplementary":{
+            "description":"close the supplementary form"
+        },
+        "disableInput":{
+            "description":"the input from can only be read when supplementary form shows"
+        },
+        "enableInput":{
+            "description":"reset the input form"
+        }    
+	},
+	"events": {
+        "onSupplementaryShow":{
+            "description":"occurred when the supplementary form show"
+        },
+        "onNotificationShow":{
+            "description":"occurred when the notification form show"
+        },
+        "onNotificationHide":{
+            "description":"occurred when the notification form hide"
+        },
+        "onAlphabetShow":{
+            "description":"occurred when the alphabet chart show"
+        },
+        "onAlphabetHide":{
+            "description":"occurred when the alphabet cahrt hide"
+        }
+	}
+}

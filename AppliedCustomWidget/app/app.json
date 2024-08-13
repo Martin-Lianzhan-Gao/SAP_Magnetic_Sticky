@@ -1,0 +1,86 @@
+{
+    "id": "com.sap.sample.martinsfillinapp",
+    "version": "1.0.0",
+    "name": "Martin's Fill in Application",
+    "description": "An integrated fill in application for team member",
+    "newInstancePrefix": "MartinsFillinApp",
+    "icon": "",
+    "vendor": "SAP",
+    "eula": "",
+    "supportsMobile":true,
+    "license": "",
+    "webcomponents":[
+        {
+            "kind": "main",
+            "tag": "com-sap-martinsfillinapp",
+            "url": "https://martintest0302.cpgc.cn40.apps.platform.sapcloud.cn/app.js",
+            "integrity": "",
+            "ignoreIntegrity": true
+        }
+    ],
+    "properties": {
+	},
+	"methods": {
+        "deployData":{
+            "description": "load data of data model into interactive table",
+            "parameters":[
+                {
+                    "name": "dimensions",
+                    "description": "table dimensions",
+                    "type": ""
+                },
+                {
+                    "name": "values",
+                    "description":"actual values of each dimension",
+                    "type": ""
+                },
+                {
+                    "name": "type",
+                    "description":"work type that your want to check",
+                    "type": ""
+                }
+            ]
+        },
+        "dataProcessing":{
+            "description":"load data from SAC into app",
+            "parameters":[
+                {
+                    "name":"data",
+                    "type":""
+                }
+            ]
+        },
+        "deployCustomerName":{
+            "description":"load customer names from SAC to app",
+            "parameters":[
+                {
+                   "name":"names",
+                   "type":"" 
+                }
+            ]
+        },
+        "transferNewRecordIntoSAC":{
+            "description":"transfer new record data from app to SAC",
+            "returnType":"string[]"
+        },
+        "transferNewCustomerIntoSAC":{
+            "description":"transfer new customer data from app to SAC",
+            "returnType":"string[]"
+        },
+        "transferUpdatedExistingRecordIntoSAC":{
+            "description":"transfer updated existing record from app to SAC",
+            "returnType":"string[]"
+        }
+	},
+	"events": {
+        "onNewRecordTransfer":{
+            "description":"ocurred when need to transfer new record into SAC database"
+        },
+        "onAddNewCustomer":{
+            "description":"ocurred when need to add new cutomer into SAC database"
+        },
+        "onChangeExistingRecord":{
+            "description":"ocurred when the existing record is updated or changed"
+        }
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "id": "com.sap.sample.martinsinteractivetable",
+    "version": "1.0.0",
+    "name": "Martin's Interactive Table",
+    "description": "An Interactive table that supports user operations on data model",
+    "newInstancePrefix": "MartinsInteractiveTable",
+    "icon": "",
+    "vendor": "SAP",
+    "eula": "",
+    "supportsMobile":true,
+    "license": "",
+    "webcomponents":[
+        {
+            "kind": "main",
+            "tag": "com-sap-martinsinteractivetable",
+            "url": "http://localhost:3000/AppliedCustomWidget/table/table.js",
+            "integrity": "",
+            "ignoreIntegrity": true
+        }
+    ],
+    "properties": {
+	},
+	"methods": {
+        "loadData":{
+            "description": "load data of data model into interactive table",
+            "parameters":[
+                {
+                    "name": "dimensions",
+                    "description": "table dimensions",
+                    "type": ""
+                },
+                {
+                    "name": "values",
+                    "description":"actual values of each dimension",
+                    "type": ""
+                },
+                {
+                    "name": "type",
+                    "description":"work type that your want to check",
+                    "type": ""
+                }
+            ]
+        }
+	},
+	"events": {
+    }
+}

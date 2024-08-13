@@ -1,0 +1,586 @@
+/* import font styles */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap');
+
+/* whole page basic style settings*/
+:host{
+    width: 100%;
+    height: 100%;
+    background: #f7f7f7;
+    overflow-y: auto;
+    /* temporarily hidden */
+    overflow-x: hidden;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Below are style settings of the area contains first top navigation and secondary top navigation */
+/* */
+#head_part{
+    position: relative;
+    width: 100%;
+    height: 15%;
+    background-color: white;
+    top: 0%;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.2);
+}
+
+#nav_1{
+    position: absolute;
+    height: 20%;
+    width: 70%;
+    left: 15%;
+    top: 40%;
+    background-color: #f7f7f7;
+    display: flex;
+    border-radius: 8px;
+}
+
+#nav_2{
+    position: absolute;
+    text-align: center;
+    bottom: 0%;
+    width: 100%;
+    display: flex;
+    height: 20%;
+    background-color: white;
+    font-weight: 600;
+}
+
+#nav_1 label, #nav_2 label{
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+#nav_1 label div{
+    position: relative;
+    z-index: -1;
+    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgb(141, 141, 141);
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#nav_2 label div{
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+    color: rgb(141, 141, 141);
+    z-index: -1;
+}
+
+#nav_1 input, #nav_2 input{
+    display: none;
+}
+
+#nav_1 .option_cover{
+    position:absolute;
+    height: 100%;
+    width: 50%;
+    left: 0%;
+    border-radius: 8px;
+    box-shadow: 0px 1.5px 1.5px 0px rgba(0,0,0,0.2);
+    background-color: rgb(24, 119, 136);
+    transition: 0.46s cubic-bezier(0.68, -0.55,0.265, 1.55);
+}
+
+#nav_2 .option_bar{
+    position: absolute;
+    height: 10%;
+    width: 33.33333333%;
+    left: 0%;
+    bottom: 0%;
+    background-color: rgb(24, 119, 136);
+    transition: 0.46s cubic-bezier(0.5, -0.3,0.265, 1.3);
+    border-radius: 8px;
+}
+
+#nav_1 #this_mon:checked ~ label.this_mon div,
+#nav_1 #last_mon:checked ~ label.last_mon div
+{
+    color: white;
+}
+
+#nav_1 #last_mon:checked ~ .option_cover{
+    left: 50%;
+}
+
+#nav_2 #deal_sup:checked ~ label.deal_sup div,
+#nav_2 #enable:checked ~ label.enable div,
+#nav_2 #proj_sup:checked ~ label.proj_sup div{
+    color: rgb(24, 119, 136);
+}
+
+#nav_2 #enable:checked ~ .option_bar{
+    left: 33.33333333%;
+}
+
+#nav_2 #proj_sup:checked ~ .option_bar{
+    left: 66.66666666%;
+}
+
+/* Below are style settings about data table*/
+/* table basic style settings, suitable for all the tables */
+#table_body{
+    position: relative;
+    width: 100%;
+    top: 1%;
+    left: 0%;
+    height: 84%;
+    /* background-color: rgb(85, 173, 214); */
+    background-color: #f7f7f7;
+    font-family: 'Lato', sans-serif;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 12px;
+}
+
+#table_body table {
+    border-collapse: collapse;
+    overflow-y: auto;
+    width: 100%;
+    position: absolute;
+    transition: 0.46s cubic-bezier(0.5, -0.3,0.265, 1.3);
+    left: 0%;
+}
+
+th, td {
+
+    text-align: left;
+    padding: 8px;
+    /* border-bottom: 1px solid #f7f7f7; */
+}
+
+td:hover{
+    background-color: black;
+    opacity: 0.3;
+    border-radius: 8px;
+    color: white;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+/* tr:nth-child(even) {background-color: white;} */
+tr:nth-child(odd) {background-color: white;}
+
+
+#table_pop_up{
+    width: 26%;
+    height: 1%;
+    background-color: white;
+    border-radius: 30px;
+    position: fixed;
+    box-shadow:  0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    /* transition: width 0.5s ease-in-out; */
+    animation-name:scale;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes scale{
+    /* from{width: 1%;}
+    to {width: 5%;}
+
+    from{width: 5%;}
+    to {width: 26%;} */
+
+    from{height: 3%;}
+    to {height: 5%;}
+}
+
+#table_input{
+    position: absolute;
+    width: 40%;
+    left: 10%;
+    height: 80%;
+    top:5%;
+    border-radius: 30px;
+    border-color: white;
+    border-style: hidden;
+    outline: none;
+}
+
+#table_submit_btn{
+    position: absolute;
+    width: 20%;
+    height: 80%;
+    left: 75%;
+    top: 10%;
+    border-radius: 24px;
+    border-style: none;
+    /* background-color: rgb(209, 209, 209); */
+    background: rgb(209, 209, 209) url("http://localhost:3000/AppliedCustomWidget/app/images/1x/submit_white.png") center center no-repeat;
+}
+
+/* new record page style setting */
+#new_record_btn{
+    position: absolute;
+    width: 16%;
+    height: 5%;
+    bottom: 3%;
+    left: 42%;
+    border-radius: 8px;
+    border-style: none;
+    background-color: #FFC107;
+    box-shadow:  0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    font-weight: 700;
+    transition: 0.5s cubic-bezier(0.5, -0.3,0.265, 1.6);
+}
+
+#new_record_page{
+    position: absolute;
+    width: 90%;
+    height: 30%;
+    left: 5%;
+    bottom: -50%;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow:  0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: 0.5s cubic-bezier(0.5, -0.3,0.265, 1.6);
+}
+
+.new_record_nav{
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    height: 12%;
+    background-color: #f7f7f7;
+    display: flex;
+    border-radius: 8px;
+    transition: 0.5s ease-in-out;
+}
+
+#nav_month, #nav_type{
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+}
+
+#nav_month{
+    top:10%;
+}
+
+#nav_type{
+    top:30%;
+}
+
+#nav_month label, #nav_type label{
+    width: 100%;
+    text-align: center;
+    z-index: 1; 
+}
+
+#nav_month label div, #nav_type label div{
+    position: relative;
+    z-index: -1;
+    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgb(141, 141, 141);
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#nav_month input, #nav_type input{
+    display: none;
+}
+
+.opt_cover1, .opt_cover2{
+    position:absolute;
+    height: 100%;
+    left: 0%;
+    border-radius: 8px;
+    box-shadow: 0px 1.5px 1.5px 0px rgba(0,0,0,0.2);
+    background-color: rgb(24, 119, 136);
+    transition: 0.36s cubic-bezier(0.68, -0.55,0.265, 1.55);
+}
+
+.opt_cover1{
+    width: 50%;
+}
+
+.opt_cover2{
+    width: 33.33333333%;
+}
+
+#nav_month #opt_this_mon:checked ~ label.opt_this_mon div,
+#nav_month #opt_last_mon:checked ~ label.opt_last_mon div
+{
+    color: white;
+}
+
+#nav_month #opt_last_mon:checked ~ .opt_cover1{
+    left: 50%;
+}
+
+#nav_type #opt_deal_sup:checked ~ label.opt_deal_sup div,
+#nav_type #opt_enable:checked ~ label.opt_enable div,
+#nav_type #opt_proj_sup:checked ~ label.opt_proj_sup div{
+    color: white;
+}
+
+#nav_type #opt_enable:checked ~ .opt_cover2{
+    left: 33.33333333%;
+}
+
+#nav_type #opt_proj_sup:checked ~ .opt_cover2{
+    left: 66.66666666%;
+}
+
+#customer_label{
+    top: 50%;
+}
+
+#customer_input{
+    position: absolute;
+    width: 55%;
+    right: 5%;
+    height:12%;
+    border-radius: 8px;
+    border-style: hidden;
+    outline: none;
+    background-color: #f7f7f7;
+    top: 50%;
+    transition: 0.5s ease-in-out;
+    display: inline-block;
+}
+
+#fillin_btn{
+    position: absolute;
+    width: 18%;
+    height: 12%;
+    bottom: 5%;
+    left: 41%;
+    background-color: #f7f7f7;
+    color: rgb(102, 101, 101);
+    border-radius: 8px;
+    box-shadow:  0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    font-weight: 700;
+    border-style: none;
+    transition: 0.5s ease-in-out;
+}
+
+.recommend_content {
+    position: absolute;
+    /* margin-top: 5%;
+    margin-left: 5%; */
+    bottom: 40%;
+    z-index: 5;
+    font-size: 12px;
+    display: none;
+    background-color: #f1f1f1;
+    max-width: 100%;
+
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.recommend_content a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 8px;
+}
+
+.recommend_content a:hover {
+    background-color: #ddd;
+}
+
+/* warning message setting */
+#warning_msg{
+    position: fixed;
+    width: 80%;
+    height: 10%;
+    left: 10%;
+    /* bottom: -20%; */
+    background-color: black;
+    opacity: 70%;
+    border-radius: 8px;
+    /* transition: 0.3s ease-in-out; */
+    /* animation-name:msgSlideON;
+    animation-duration: 0.25s ;
+    animation-timing-function: cubic-bezier(0.265, -0.23, 0.68, 1.86);
+    animation-fill-mode: forwards; */
+    animation:  0.25s cubic-bezier(0.265, -0.23, 0.68, 1.86) forwards msgSlideON, 1s cubic-bezier(0.265, 0.23, 0.48, 1) 2s forwards msgSlideDown;
+    /* justify-content: center; */
+
+    
+}
+
+#warning_msg div{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
+
+@keyframes msgSlideON{
+    from{bottom: -1%;}
+    to {bottom: 8%;}
+}
+
+@keyframes msgSlideDown{
+    0%{
+        opacity: 70%;
+    }
+
+    20%{
+        opacity: 50%;
+    }
+
+    40%{
+        opacity: 30%;
+    }
+
+    60%{
+        opacity: 10%;
+    }
+
+    80%{
+        opacity: 5%;
+    }
+
+    100%{
+        opacity: 0%;
+    }
+}
+
+/* value input widgets style setting */
+.value_input_label, .general_input_label{
+    position: absolute;
+    border-radius: 8px;
+    height: 12%;
+    width: 30%;
+    left: 5%;
+    background-color:#f7f7f7;
+    transition: 0.5s ease-in-out;
+    display: inline-block;
+}
+
+.value_input_label div, .general_input_label div{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    color: black;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.value_input_cover{
+    position: absolute;
+    width: 55%;
+    right: 5%;
+    height: 12%;
+    border-radius: 8px;
+    transition: 0.5s ease-in-out;
+    display: inline-block;
+}
+
+.value_input_form{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border-style: hidden;
+    outline: none;
+    background-color: #f7f7f7;
+}
+
+/* pop up message style setting */
+#pop_up_msg {
+    position: fixed;
+    width: 60%;
+    height: 20%;
+    left: 20%;
+    top: 5%;
+    z-index: 20;
+    background-color: black;
+    opacity: 90%;
+    border-radius: 8px;
+    transition: 0.5s cubic-bezier(0.5, -0.3,0.265, 1.6);
+    animation-name: popUpSlideUp;
+    animation-duration: 0.45s ;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+#pop_up_msg div{
+    position: absolute;
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    top: 30%;
+}
+
+#pop_up_msg button{
+    position: absolute;
+    background-color: black;
+    /* color: rgb(24, 119, 136); */
+    width: 16%;
+    border-radius: 8px;
+    border-style: none;
+    outline: none;
+    height: 10%;
+    bottom: 15%;
+}
+
+#close_pop_up_btn{
+    left: 5%;
+    color: rgb(160, 0, 0);
+}
+
+#determine_btn{
+    right: 5%;
+    color: rgb(24, 119, 136);
+}
+
+@keyframes popUpSlideUp{
+    from {top:-50%}
+    to {top:5%}
+}
+
+/* option widgets style setting */
+.selection_form{
+    position: absolute;
+    height: 12%;
+    width: 55%;
+    right: 5%;;
+    border-radius: 8px;
+    transition: 0.5s ease-in-out;
+    display: inline-block;
+    background-color: #f7f7f7;
+    outline: none;
+    border-style: none;
+}
+
+/* manipulation buttons style setting */
+.manipulation_button{
+    position: absolute;
+    border-radius: 8px;
+    /* outline: none; */
+    box-shadow:  0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    font-weight: 700;
+    border-style: none;
+    transition: 0.5s ease-in-out;
+    background-color: rgb(24, 119, 136);
+    color: white;
+    bottom: 5%;
+}

@@ -1,0 +1,11 @@
+---
+applications:
+- name: martintest0302
+  memory: 128M
+  disk_quota: 256M
+  instances: 1
+  random-route: false
+  host: martintest0302
+  routes:
+    - route: martintest0302.cpgc.cn40.apps.platform.sapcloud.cn
+  path: .

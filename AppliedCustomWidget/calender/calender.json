@@ -1,0 +1,54 @@
+{
+    "id": "com.sap.sample.martinscalenderwidget",
+    "version": "1.0.0",
+    "name": "Martin's Calender",
+    "description": "A calender widget supports switch guester for change date",
+    "newInstancePrefix": "MartinsCalenderWidget",
+    "icon": "",
+    "vendor": "SAP",
+    "eula": "",
+    "supportsMobile":true,
+    "license": "",
+    "webcomponents":[
+        {
+            "kind": "main",
+            "tag": "com-sap-martinscalenderwidget",
+            "url": "http://localhost:3000/AppliedCustomWidget/calender/calender.js",
+            "integrity": "",
+            "ignoreIntegrity": true
+        }
+    ],
+    "properties": {
+        "width": {
+			"type": "integer",
+			"default": 100
+		},
+		"height": {
+			"type": "integer",
+			"default": 100
+		}
+	},
+	"methods": {
+        "getDate":{
+            "returnType": "string",
+            "description":"get the calender's current date",
+            "parameters": []
+        },
+
+        "setDate":{
+            "description": "Set the new date of widget",
+            "parameters":[
+                {
+                  "name":"newDate",
+                    "type":"string",
+                    "description":"The new widget date"
+                }
+            ]
+        }
+	},
+	"events": {
+        "onLoad":{
+            "description": "Called when window is loaded"
+        }
+	}
+}

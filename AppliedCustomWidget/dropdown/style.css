@@ -1,0 +1,227 @@
+:host{
+    min-width: 375px;
+    min-height: 375px;
+    overflow: visible;
+    position: relative;
+}
+
+.body{
+    border-radius: 8px;
+    height: 20%;
+    width: 94%;
+    margin-left: 3%;
+    margin-top: 3%;
+    background-color: #eeeeee;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+#cname{
+    border-radius: 4px;
+    display: inline-block;
+    height: 40%;
+    width: 65%;
+    margin-top: 5%;
+    margin-left: 5%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.16), 0 1px 2px rgba(0,0,0,0.23) inset;
+    background-color: #f5f0f0;
+    border: none;
+    border-color: #eeeeee;
+    z-index: 3;
+    font-style:italic;
+    font-weight: 600;
+}
+
+#dropBtn {
+    position: relative;
+    display: inline-block;
+    background: url("http://localhost:3000/AppliedCustomWidget/dropdown/images/drop_down.png") no-repeat;
+    background-position: center;
+    border-style: none;
+    background-color: #3498DB;
+    height: 42%;
+    width: 15%;
+    left: 5px;
+    top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.16), 0 1px 2px rgba(0,0,0,0.23);
+}
+
+#dropBtn:hover, #dropBtn:focus {
+    background-color:#2980B9;
+}
+
+.dropdown_content{
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 30%;
+    z-index: 5;
+    font-size: 16px;
+    display: none;
+    background-color: #f1f1f1;
+    max-width: 240px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.dropdown_content a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 8px;
+}
+
+.dropdown_content a:hover {background-color: #ddd;}
+
+.recommend_content {
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 5%;
+    z-index: 5;
+    font-size: 16px;
+    display: none;
+    background-color: #f1f1f1;
+    max-width: 240px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.recommend_content a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 8px;
+}
+
+.recommend_content a:hover {
+    background-color: #ddd;
+}
+
+.assisstant_part{
+    border-radius: 8px;
+    height: 20%;
+    width: 94%;
+    margin-left: 3%;
+    margin-top: 3%;
+    background-color: #eeeeee;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    display: none;
+}
+
+.assisstant_part p{
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.notify_btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 4px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    position: relative;
+    top: -35%;
+    left: 65%;
+}
+
+#yes{
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+    border-radius: 4px;
+    
+}
+
+#yes:hover{
+    background-color: #008CBA;
+    color: white;
+}
+
+#no{
+    background-color: white; 
+    color: black; 
+    border: 2px solid #f44336;
+    border-radius: 4px;
+}
+
+#no:hover{
+    background-color: #f44336;
+    color: white;
+}
+
+.supplementary_part{
+    border-radius: 8px;
+    height: 70%;
+    width: 94%;
+    margin-left: 3%;
+    margin-top: 3%;
+    background-color: #f5f0f0;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    display: none;
+}
+
+.supplementary_part, .fillin p{
+    font-size: 16px;
+    padding-left:12px;
+    padding-top: 12px;
+    padding-bottom: -18px;
+    font-weight: bold;
+}
+
+.label {
+    top: -15%;
+    font-size: 14px;
+    margin-left: 12px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    display: block;
+}
+
+#description, #region_select, #custom_type{
+    font-size: 12px;
+    margin-left: 12px;
+    margin-bottom: 8px;
+    display: inline-block;
+    width: 90%;
+    height: 14%;
+    border-radius: 6px;
+    border: 1px solid #f5f0f0;
+    box-sizing: border-box;
+    
+}
+
+#description{
+    box-shadow: 0 1px 2px rgba(0,0,0,0.16), 0 1px 2px rgba(0,0,0,0.23) inset;
+}
+
+#region_select, #custom_type{
+    box-shadow: 0 1px 2px rgba(0,0,0,0.16), 0 1px 2px rgba(0,0,0,0.23);
+}
+
+.selection{
+    font-size: 12px;
+    border-radius: 6px;
+    display: block;
+}
+
+.fillin{
+    border-radius: 8px;
+    height: 50%;
+    width: 94%;
+    margin-left: 3%;
+    margin-top: 3%;
+    background-color: #f5f0f0;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    display: none;
+}
+
+
